@@ -28,10 +28,10 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: 17
-          
+
       - name: Decode keystore
         run: |
-          echo "${{ secrets.SIGNING_KEYSTORE_BASE64 }}" | base64 -d > keystore.jks
+          echo "${{ secrets.SIGNING_KEYSTORE_BASE64 }}" | base64 -d > app/keystore.jks
 
       - name: Make gradlew executable
         run: chmod +x ./gradlew
